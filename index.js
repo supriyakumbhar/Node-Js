@@ -1,12 +1,19 @@
+const express = require("express");
+const app = express();
 
-const square = require('./square.js');
+const staticPath = path.join(__dirname, "../public");
 
-const calsquare = (a) =>{
-    console.log(`the value of a is ${a} and the square is` +square.area(a) );
-    console.log(`the value of a is ${a} and the perimeter is` +square.perimeter(a) );
-}
+app.use(express.static(staticPath));
 
-console.log(__filename);
-console.log(__dirname);
+app.get("/" , (req, res) => {
+    res.send("hello from the express");
+});
 
-calsquare(5);
+app.get("/about" , (req, res) => {
+    res.send("hello from the about page");
+});
+
+
+app.listen(8000, () => {
+    console.log("listening the port at 8000");
+});
