@@ -5,16 +5,30 @@
 
 
 <head>
+    <title>Weather</title>
+    <link rel="icon" href="/ww/cloud.png">
     <link rel ="stylesheet" href ="/css/style.css">
-    <script src= "/js/app1.js"></script>
+    
 
     </head>
  
 <body>
-    <h1>{{title}}</h1>
-    <p>Created by {{name}}</p>
+    <div class="main-content">
+        
+        {{>header}}
+        <p>Use this site to get your weather</p>
+        
+
+        <form>
+              <input placeholder="location">
+              <button>search</button>
+              </form>
+
+              <p id="message-1"></p>
+              <p id="message-2"></p>
+        </div>
     
+    {{>footer}}
+     <script src= "/js/app1.js"></script>
 </body>
-
-
 </html>
